@@ -1,0 +1,7 @@
+*.swp
+*~
+*.o
+*.so
+.vscode
+*.out
+main_test/test
