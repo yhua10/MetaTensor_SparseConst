@@ -1,0 +1,36 @@
+CC      = gcc
+CFLAGS  = -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude
+LDLIBS  =
+
+OBJS = \
+	src/block.o \
+	src/datadesc.o \
+	src/plugins.o \
+	src/target_base.o \
+	targets/target_c99.o \
+	plugins/datacopy_foreach.o \
+	plugins/datacopy_121_reference.o \
+	plugins/block2data_arithmetic.o \
+	plugins/block2data_sparse_const.o
+
+test_sparse: main_test/test.sparse_const_basic.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+
+dump_sparse.c: test_sparse
+	./test_sparse
+
+dump_sparse.o: dump_sparse.c
+	$(CC) $(CFLAGS) -c dump_sparse.c -o dump_sparse.o
+
+verify_sparse: main_test/test.sparse_const_verify.o dump_sparse.o
+	$(CC) $(CFLAGS) -o $@ $^ -lm
+
+run: test_sparse dump_sparse.o
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	powershell -NoProfile -Command "$$paths = 'test_sparse.exe verify_sparse.exe dump_sparse.c dump_sparse.o $(OBJS) main_test/test.sparse_const_basic.o main_test/test.sparse_const_verify.o' -split ' '; Remove-Item -Force -ErrorAction SilentlyContinue $$paths"
+
+.PHONY: clean run

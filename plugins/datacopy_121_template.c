@@ -1,4 +1,4 @@
-
+﻿
 #include "plugins.h"
 
 /*
@@ -33,8 +33,8 @@ int_t	datacopy_121_template(target t, datadesc_set dst, datadesc_set src)
 	char *	t_dst_p = token_new();	// 目标位置的首地址
 	char *	t_src_p = token_new();	// 源位置的首地址
 
-	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", itoa(d->p[0]->offset0), ");");
-	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", itoa(d->p[1]->offset0), ");");
+	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", mt_itoa(d->p[0]->offset0), ");");
+	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", mt_itoa(d->p[1]->offset0), ");");
 
 	emit_assert(emit_for_begin(t, d, &idx));
 	emit_push(t_dst_p, "[", idx[0], "]=0;");	// FIXME: 这里显然有优化空间，不知道编译器是否能自动发现，最好还是应该仔细处理一下。

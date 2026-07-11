@@ -1,4 +1,4 @@
-#ifndef	F_TARGET_BASE_H_
+﻿#ifndef	F_TARGET_BASE_H_
 #define F_TARGET_BASE_H_
 
 #include	"datadesc.h"
@@ -94,7 +94,7 @@ int_t	index_new();	// start from 1
 
 char *	token_new();
 
-char *	itoa(int_t i);
+char *	mt_itoa(int_t i);
 
 
 

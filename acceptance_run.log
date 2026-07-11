@@ -1,0 +1,204 @@
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o main_test/test.sparse_const_basic.o main_test/test.sparse_const_basic.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o src/block.o src/block.c
+src/block.c: In function ‘block_new’:
+src/block.c:17:9: warning: enumeration value ‘block_type_first’ not handled in switch [-Wswitch]
+   17 |         switch (res->type = t)
+      |         ^~~~~~
+src/block.c:17:9: warning: enumeration value ‘block_type_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_basic_first’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_con_ser’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_con_par_int’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_con_par_uni’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_wire’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_wire_filter’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_wire_revert’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_generator_all’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_basic_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_first’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_minus’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_div’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_exp’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_log’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_sin’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_cos’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_tan’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_atan’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_unary_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_first’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_sum’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_prod’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_max’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_min’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_mean’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_median’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_reduce_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_compare_first’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_compare_equal’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_compare_less’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_compare_more’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_compare_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_first’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_refget’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_refset’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_type_int’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_type_double’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_emit_last’ not handled in switch [-Wswitch]
+src/block.c:17:9: warning: enumeration value ‘block_builtin_last’ not handled in switch [-Wswitch]
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o src/datadesc.o src/datadesc.c
+src/datadesc.c: In function ‘datadesc_normalize’:
+src/datadesc.c:564:15: warning: unused variable ‘swap_flag’ [-Wunused-variable]
+  564 |         int_t swap_flag = 0;
+      |               ^~~~~~~~~
+src/datadesc.c:537:17: warning: unused variable ‘dim’ [-Wunused-variable]
+  537 |         dimdesc dim;
+      |                 ^~~
+src/datadesc.c:535:33: warning: unused variable ‘tuple’ [-Wunused-variable]
+  535 |         int_t dim_index, entry, tuple;
+      |                                 ^~~~~
+src/datadesc.c:535:26: warning: unused variable ‘entry’ [-Wunused-variable]
+  535 |         int_t dim_index, entry, tuple;
+      |                          ^~~~~
+src/datadesc.c:534:23: warning: unused variable ‘k’ [-Wunused-variable]
+  534 |         int_t   i, j, k;
+      |                       ^
+src/datadesc.c: In function ‘dim_find_common’:
+src/datadesc.c:773:15: warning: unused variable ‘temp’ [-Wunused-variable]
+  773 |         int_t temp;
+      |               ^~~~
+src/datadesc.c: In function ‘expand_dim’:
+src/datadesc.c:832:17: warning: unused variable ‘dim_p1’ [-Wunused-variable]
+  832 |         dimdesc dim_p1, dim_p2;
+      |                 ^~~~~~
+src/datadesc.c: In function ‘datadesc_find_common’:
+src/datadesc.c:905:27: warning: unused variable ‘data_p2’ [-Wunused-variable]
+  905 |         datadesc data_p1, data_p2;
+      |                           ^~~~~~~
+src/datadesc.c:905:18: warning: unused variable ‘data_p1’ [-Wunused-variable]
+  905 |         datadesc data_p1, data_p2;
+      |                  ^~~~~~~
+src/datadesc.c:904:21: warning: unused variable ‘k’ [-Wunused-variable]
+  904 |         int_t i, j, k;
+      |                     ^
+src/datadesc.c: In function ‘datadesc_dimmap’:
+src/datadesc.c:1385:1: warning: label ‘end’ defined but not used [-Wunused-label]
+ 1385 | end:
+      | ^~~
+src/datadesc.c:1021:15: warning: unused variable ‘temp’ [-Wunused-variable]
+ 1021 |         int_t temp;
+      |               ^~~~
+src/datadesc.c:1020:32: warning: unused variable ‘check_pos’ [-Wunused-variable]
+ 1020 |         int_t i, j, k, l, pos, check_pos;
+      |                                ^~~~~~~~~
+src/datadesc.c: In function ‘datadesc_subset_merge_search’:
+src/datadesc.c:1862:16: warning: assignment to ‘void **’ from incompatible pointer type ‘merge_info_piece_t **’ [-Wincompatible-pointer-types]
+ 1862 |         *mutat = merge_info_set;                        // FIXME: 这里有个编译警告，需要仔细确认一下并处理
+      |                ^
+src/datadesc.c: In function ‘datadesc_subset_merge_1dim’:
+src/datadesc.c:1783:1: warning: control reaches end of non-void function [-Wreturn-type]
+ 1783 | }
+      | ^
+src/datadesc.c: At top level:
+src/datadesc.c:670:14: warning: ‘find_int’ defined but not used [-Wunused-function]
+  670 | static int_t find_int(int_t* arr, int_t size, int_t number){
+      |              ^~~~~~~~
+src/datadesc.c: In function ‘datadesc_show’:
+src/datadesc.c:1988:9: warning: ‘i’ is used uninitialized [-Wuninitialized]
+ 1988 |         printf("\tdatadesc #%ld :\n", i);// FIXME: i没初始化？
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/datadesc.c:1984:15: note: ‘i’ was declared here
+ 1984 |         int_t i, j, k, l;
+      |               ^
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o src/plugins.o src/plugins.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o src/target_base.o src/target_base.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o targets/target_c99.o targets/target_c99.c
+targets/target_c99.c: In function ‘create_data’:
+targets/target_c99.c:57:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   57 | }
+      | ^
+targets/target_c99.c: In function ‘target_c99_new’:
+targets/target_c99.c:120:29: warning: assignment to ‘enum_endian (*)(target_t *)’ from incompatible pointer type ‘enum_endian (*)(target_c99_t *)’ [-Wincompatible-pointer-types]
+  120 |         _base->query_endian = query_endian;
+      |                             ^
+targets/target_c99.c:121:27: warning: assignment to ‘void * (*)(target_t *, enum_elem_type,  int_t)’ {aka ‘void * (*)(target_t *, enum_elem_type,  long int)’} from incompatible pointer type ‘void * (*)(target_c99_t *, enum_elem_type,  int_t)’ {aka ‘void * (*)(target_c99_t *, enum_elem_type,  long int)’} [-Wincompatible-pointer-types]
+  121 |         _base->query_type = query_type;
+      |                           ^
+targets/target_c99.c:122:22: warning: assignment to ‘void * (*)(target_t *, int_t)’ {aka ‘void * (*)(target_t *, long int)’} from incompatible pointer type ‘void * (*)(target_c99_t *, int_t)’ {aka ‘void * (*)(target_c99_t *, long int)’} [-Wincompatible-pointer-types]
+  122 |         _base->alloc = alloc;
+      |                      ^
+targets/target_c99.c:123:28: warning: assignment to ‘datadesc_t * (*)(target_t *, void *)’ from incompatible pointer type ‘datadesc_t * (*)(target_c99_t *, void *)’ [-Wincompatible-pointer-types]
+  123 |         _base->create_data = create_data;
+      |                            ^
+targets/target_c99.c:124:28: warning: assignment to ‘int_t (*)(target_t *)’ {aka ‘long int (*)(target_t *)’} from incompatible pointer type ‘int_t (*)(target_c99_t *)’ {aka ‘long int (*)(target_c99_t *)’} [-Wincompatible-pointer-types]
+  124 |         _base->check_point = check_point;
+      |                            ^
+targets/target_c99.c:125:21: warning: assignment to ‘void (*)(target_t *, void *)’ from incompatible pointer type ‘void (*)(target_c99_t *, void *)’ [-Wincompatible-pointer-types]
+  125 |         _base->push = push;
+      |                     ^
+targets/target_c99.c:126:26: warning: assignment to ‘void (*)(target_t *, int_t)’ {aka ‘void (*)(target_t *, long int)’} from incompatible pointer type ‘void (*)(target_c99_t *, int_t)’ {aka ‘void (*)(target_c99_t *, long int)’} [-Wincompatible-pointer-types]
+  126 |         _base->roll_back = roll_back;
+      |                          ^
+targets/target_c99.c:127:23: warning: assignment to ‘void (*)(target_t *, int_t)’ {aka ‘void (*)(target_t *, long int)’} from incompatible pointer type ‘void (*)(target_c99_t *, int_t)’ {aka ‘void (*)(target_c99_t *, long int)’} [-Wincompatible-pointer-types]
+  127 |         _base->commit = commit;
+      |                       ^
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o plugins/datacopy_foreach.o plugins/datacopy_foreach.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o plugins/datacopy_121_reference.o plugins/datacopy_121_reference.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o plugins/block2data_arithmetic.o plugins/block2data_arithmetic.c
+plugins/block2data_arithmetic.c: In function ‘get_par_datadesc’:
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_first’ not handled in switch [-Wswitch]
+   32 |         switch (ob->type)
+      |         ^~~~~~
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_box’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_con_ser’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_con_par_uni’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_wire’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_int_t’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_double’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_type_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_basic_first’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_con_ser’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_con_par_int’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_con_par_uni’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_wire’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_wire_filter’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_wire_revert’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_generator_all’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_basic_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_first’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_minus’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_div’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_exp’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_log’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_sin’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_cos’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_tan’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_atan’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_unary_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_first’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_sum’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_prod’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_max’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_min’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_mean’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_median’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_reduce_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_compare_first’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_compare_equal’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_compare_less’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_compare_more’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_compare_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_first’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_refget’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_refset’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_type_int’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_type_double’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_emit_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:32:9: warning: enumeration value ‘block_builtin_last’ not handled in switch [-Wswitch]
+plugins/block2data_arithmetic.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+   44 | }
+      | ^
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o plugins/block2data_sparse_const.o plugins/block2data_sparse_const.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -o test_sparse main_test/test.sparse_const_basic.o src/block.o src/datadesc.o src/plugins.o src/target_base.o targets/target_c99.o plugins/datacopy_foreach.o plugins/datacopy_121_reference.o plugins/block2data_arithmetic.o plugins/block2data_sparse_const.o 
+./test_sparse
+SPARSE PATH HIT
+OK; dump written to dump_sparse.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c dump_sparse.c -o dump_sparse.o

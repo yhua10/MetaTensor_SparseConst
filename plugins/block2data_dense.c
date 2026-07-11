@@ -1,4 +1,4 @@
-#include	"plugins.h"
+﻿#include	"plugins.h"
 #include	"gc_malloc.h"
 #include    "datadesc.h"
 #include    <string.h>
@@ -270,7 +270,7 @@ void generator_code_gen(target t, block ob) {
                 char *tmp_const_valid_array_name = token_new();
                 dimdesc cur_dim = NULL;
 
-                emit_push("const ", off_type, tmp_const_off_array_name, "[", itoa(cur_common_indices_cnt), "] = {");
+                emit_push("const ", off_type, tmp_const_off_array_name, "[", mt_itoa(cur_common_indices_cnt), "] = {");
                 for (int_t m = 0; m < cur_datadesc_set->p[k]->n_dim && cur_datadesc_set->p[k]->dims[m] != NULL; m++) {
                     if (cur_datadesc_set->p[k]->dims[m]->dims[0] == 0 - i) {
                         cur_dim = cur_datadesc_set->p[k]->dims[m];
@@ -286,7 +286,7 @@ void generator_code_gen(target t, block ob) {
                         int_t n = 0;
                         for (; n < cur_dim->n_entry; n++) {
                             if (cur_dim->indices[n] == dim_to_common_indices_neg[i][m]) {
-                                emit_push(itoa(cur_dim->offsets[n]));
+                                emit_push(mt_itoa(cur_dim->offsets[n]));
                                 break;
                             }
                         }
@@ -298,7 +298,7 @@ void generator_code_gen(target t, block ob) {
                 }
                 emit_push("};");
 
-                emit_push("const ", valid_type, tmp_const_valid_array_name, "[", itoa(cur_common_indices_cnt), "] = {");
+                emit_push("const ", valid_type, tmp_const_valid_array_name, "[", mt_itoa(cur_common_indices_cnt), "] = {");
                 for (int_t m = 0; m < cur_common_indices_cnt; m++) {
                     if (m > 0) emit_push(", ");
 
@@ -326,7 +326,7 @@ void generator_code_gen(target t, block ob) {
         }
 
         char *tmp_loop_var = token_new();
-        emit_push("for (int32_t ", tmp_loop_var, "=0; ", tmp_loop_var, "<", itoa(cur_common_indices_cnt), "; ",
+        emit_push("for (int32_t ", tmp_loop_var, "=0; ", tmp_loop_var, "<", mt_itoa(cur_common_indices_cnt), "; ",
                      tmp_loop_var, "++) {");
         
         for (int_t j = 0; j < dim_to_set_set_cnt_neg[i]; j++) {
@@ -639,20 +639,20 @@ datadesc_set block2data_dense(target t, block ob) {
     // 在最外层{}之外初始化res_data
     // TODO: query_type
     char *res_type = "double ";
-    emit_push(res_type, "*", res_data->ref.p_refname, " = malloc(", itoa(res_data->elem_size), " * ", itoa(res_elements_cnt), ");");
+    emit_push(res_type, "*", res_data->ref.p_refname, " = malloc(", mt_itoa(res_data->elem_size), " * ", mt_itoa(res_elements_cnt), ");");
     
     emit_push("{");
     
     char * res_to_off_base_name = token_new(); 
     emit_push(res_type, "*", res_to_off_base_name, "=(", res_type, "*)((char *)(",
-                res_data->ref.p_refname, ")+", itoa(res_data->offset0), ");");
+                res_data->ref.p_refname, ")+", mt_itoa(res_data->offset0), ");");
     // NOTE: confirm invariant: data在data_set的索引 = set->data_start_index + data在datadesc_set的索引
     for (int_t i = 0; i < data_cnt; i++) {
         data_to_off_base_name[i] = token_new();
         // TODO: query_type
         char *data_type = "double ";
         emit_push(data_type, "*", data_to_off_base_name[i], "=(", data_type, "*)((char *)(",
-             data_set[i]->ref.p_refname, ")+", itoa(data_set[i]->offset0), ");");
+             data_set[i]->ref.p_refname, ")+", mt_itoa(data_set[i]->offset0), ");");
     }
 
     char *res_to_off_name = token_new();
@@ -681,7 +681,7 @@ datadesc_set block2data_dense(target t, block ob) {
         char *valid_type = "int32_t ";
         
         char *tmp_res_const_off_array_name = token_new();
-        emit_push("const ", off_type, tmp_res_const_off_array_name, "[", itoa(cur_common_indices_cnt), "] = {");
+        emit_push("const ", off_type, tmp_res_const_off_array_name, "[", mt_itoa(cur_common_indices_cnt), "] = {");
         for (int_t j = 0; j < res_data->n_dim && res_data->dims[j] != NULL; j++) {
             if (res_data->dims[j]->dims[0] == i) {
                 dimdesc cur_dim = res_data->dims[j];
@@ -690,7 +690,7 @@ datadesc_set block2data_dense(target t, block ob) {
                     int_t m = 0;
                     for (; m < cur_dim->n_entry; m++) {
                         if (cur_dim->indices[m] == dim_to_common_indices_posi[i][k]) {
-                            emit_push(itoa(cur_dim->offsets[m]));
+                            emit_push(mt_itoa(cur_dim->offsets[m]));
                             break;
                         }
                     }
@@ -707,7 +707,7 @@ datadesc_set block2data_dense(target t, block ob) {
                 char *tmp_const_valid_array_name = token_new();
                 dimdesc cur_dim = NULL;
 
-                emit_push("const ", off_type, tmp_const_off_array_name, "[", itoa(cur_common_indices_cnt), "] = {");
+                emit_push("const ", off_type, tmp_const_off_array_name, "[", mt_itoa(cur_common_indices_cnt), "] = {");
                 for (int_t m = 0; m < cur_datadesc_set->p[k]->n_dim && cur_datadesc_set->p[k]->dims[m] != NULL; m++) {
                     if (cur_datadesc_set->p[k]->dims[m]->dims[0] == i) {
                         cur_dim = cur_datadesc_set->p[k]->dims[m];
@@ -723,7 +723,7 @@ datadesc_set block2data_dense(target t, block ob) {
                         int_t n = 0;
                         for (; n < cur_dim->n_entry; n++) {
                             if (cur_dim->indices[n] == dim_to_common_indices_posi[i][m]) {
-                                emit_push(itoa(cur_dim->offsets[n]));
+                                emit_push(mt_itoa(cur_dim->offsets[n]));
                                 break;
                             }
                         }
@@ -735,7 +735,7 @@ datadesc_set block2data_dense(target t, block ob) {
                 }
                 emit_push("};");
 
-                emit_push("const ", valid_type, tmp_const_valid_array_name, "[", itoa(cur_common_indices_cnt), "] = {");
+                emit_push("const ", valid_type, tmp_const_valid_array_name, "[", mt_itoa(cur_common_indices_cnt), "] = {");
                 for (int_t m = 0; m < cur_common_indices_cnt; m++) {
                     if (m > 0) emit_push(", ");
 
@@ -763,7 +763,7 @@ datadesc_set block2data_dense(target t, block ob) {
         }
 
         char *tmp_loop_var = token_new();
-        emit_push("for (int32_t ", tmp_loop_var, "=0; ", tmp_loop_var, "<", itoa(cur_common_indices_cnt), "; ",
+        emit_push("for (int32_t ", tmp_loop_var, "=0; ", tmp_loop_var, "<", mt_itoa(cur_common_indices_cnt), "; ",
                      tmp_loop_var, "++) {");
         
         char *res_tmp_off_name = token_new();

@@ -1,4 +1,4 @@
-
+﻿
 #include	"plugins.h"
 #include	"gc_malloc.h"
 
@@ -77,13 +77,13 @@ datadesc_set	block2data_arithmetic(target t, block ob)
 
 	d->p[nd]->region = region_main;			// NOTE: 默认在默认内存区域
 	d->p[nd]->ref.p_refname = token_new();
-	emit_push(type[nd], "*", d->p[nd]->ref.p_refname, "=malloc(", itoa(d->p[nd]->offset0), ");");
+	emit_push(type[nd], "*", d->p[nd]->ref.p_refname, "=malloc(", mt_itoa(d->p[nd]->offset0), ");");
 	d->p[nd]->offset0 = 0;
 
 	emit_push("{");
 
 	for (i=0; i<=nd; i++)
-		emit_push(type[i], "*", var[i], "=(", type[i], "*)((char *)(", d->p[i]->ref.p_refname, ")+", itoa(d->p[i]->offset0), ");");
+		emit_push(type[i], "*", var[i], "=(", type[i], "*)((char *)(", d->p[i]->ref.p_refname, ")+", mt_itoa(d->p[i]->offset0), ");");
 
 	emit_assert(emit_for_begin(t, d, &idx));
 

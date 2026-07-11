@@ -1,4 +1,4 @@
-
+﻿
 #include "plugins.h"
 
 /*
@@ -53,8 +53,8 @@ int_t	datacopy_121_reference(target t, datadesc_set dst, datadesc_set src)
 	char *	t_dst_i = token_new();	// 循环中的目标位置下标，运行时使用若干变量名
 	char *	t_src_i = token_new();	// 循环中的源位置下标，运行时使用若干变量名
 
-	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", itoa(d->p[0]->offset0), ");");
-	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", itoa(d->p[1]->offset0), ");");
+	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", mt_itoa(d->p[0]->offset0), ");");
+	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", mt_itoa(d->p[1]->offset0), ");");
 	emit_push(int_type, " ", t_dst_i, "=0;");
 	emit_push(int_type, " ", t_src_i, "=0;");
 
@@ -69,9 +69,9 @@ int_t	datacopy_121_reference(target t, datadesc_set dst, datadesc_set src)
 		char *	t_src_offset_p = token_new();
 
 		// TODO: 这里的偏移量列表有可优化的潜力，比如等差数列等可以直接计算而不查表。
-		emit_push(int_type, " ", t_dst_offset_p, "[", itoa(d_dst->n_entry), "]={", itoa(d_dst->offsets[0]));
+		emit_push(int_type, " ", t_dst_offset_p, "[", mt_itoa(d_dst->n_entry), "]={", mt_itoa(d_dst->offsets[0]));
 		for (i=1; i<d_dst->n_entry; i++)
-			emit_push(",", itoa(d_dst->offsets[i]));
+			emit_push(",", mt_itoa(d_dst->offsets[i]));
 		emit_push("};");
 
 		// FIXME: 这里没有完整考虑稀疏的情况，需要额外处理
@@ -82,14 +82,14 @@ int_t	datacopy_121_reference(target t, datadesc_set dst, datadesc_set src)
 
 			emit_assert(d_src->n_tuple==1);
 			emit_assert(d_dst->n_entry==d_src->n_entry);
-			emit_push(int_type, " ", t_src_offset_p, "[", itoa(d_src->n_entry), "]={");
+			emit_push(int_type, " ", t_src_offset_p, "[", mt_itoa(d_src->n_entry), "]={");
 			for (i=0; i<d_dst->n_entry; i++)
 			{
 				for (j=0; j<d_src->n_entry && d_dst->indices[i*d_dst->n_tuple]!=d_src->indices[j*d_src->n_tuple]; j++);
 				emit_assert(j<d_src->n_entry);
 				if (i>0)
 					emit_push(",");
-				emit_push(itoa(d_src->offsets[j]));
+				emit_push(mt_itoa(d_src->offsets[j]));
 			}
 			emit_push("};");
 		}
@@ -97,7 +97,7 @@ int_t	datacopy_121_reference(target t, datadesc_set dst, datadesc_set src)
 		char *	t_offset_i = token_new();	// 每个维度对指标的循环变量
 
 		emit_push(int_type, " ", t_offset_i, ";");
-		emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", itoa(d_dst->n_entry), ";", t_offset_i, "++){");
+		emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", mt_itoa(d_dst->n_entry), ";", t_offset_i, "++){");
 
 		char *	t_tmp = token_new();
 		emit_push(int_type, " ", t_tmp, "=", t_dst_i, "+", t_dst_offset_p, "[", t_offset_i, "];");
@@ -126,15 +126,15 @@ int_t	datacopy_121_reference(target t, datadesc_set dst, datadesc_set src)
 
 			char *	t_src_offset_p = token_new();
 
-			emit_push(int_type, " ", t_src_offset_p, "[", itoa(d_src->n_entry), "]={", itoa(d_src->offsets[0]));
+			emit_push(int_type, " ", t_src_offset_p, "[", mt_itoa(d_src->n_entry), "]={", mt_itoa(d_src->offsets[0]));
 			for (i=1; i<d_src->n_entry; i++)
-				emit_push(",", itoa(d_src->offsets[i]));
+				emit_push(",", mt_itoa(d_src->offsets[i]));
 			emit_push("};");
 
 			char *	t_offset_i = token_new();	// 每个维度对指标的循环变量
 
 			emit_push(int_type, " ", t_offset_i, ";");
-			emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", itoa(d_src->n_entry), ";", t_offset_i, "++){");
+			emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", mt_itoa(d_src->n_entry), ";", t_offset_i, "++){");
 
 			char *	t_tmp = token_new();
 			emit_push(int_type, " ", t_tmp, "=", t_src_i, "+", t_src_offset_p, "[", t_offset_i, "];");

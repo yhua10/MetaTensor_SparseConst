@@ -1,4 +1,4 @@
-
+﻿
 #include	<string.h>
 
 #include	"datadesc.h"
@@ -69,7 +69,7 @@ int_t	emit_for_begin(target t, datadesc_set datas, char ***idx)
 			if (k<ds->p[j]->n_dim && ds->p[j]->dims[k])
 			{
 				offset[j] = token_new();
-				emit_push("const ", int_type, " ", offset[j], "[", itoa(nind[i]), "]={");
+				emit_push("const ", int_type, " ", offset[j], "[", mt_itoa(nind[i]), "]={");
 				for (l=0; l<nind[i]; l++)
 				{
 					if (l>0)
@@ -77,13 +77,13 @@ int_t	emit_for_begin(target t, datadesc_set datas, char ***idx)
 					for (m=0; m < ds->p[j]->dims[k]->n_entry && indices[i][l] != ds->p[j]->dims[k]->indices[m*1+0]; m++);
 					//printf("(%ld(%s),%ld,%ld,%ld(%ld),%ld)\n",i, dimname(dims[i]),j,k,l, indices[i][l],m);fflush(stdout);
 					emit_assert(m<ds->p[j]->dims[k]->n_entry);	// FIXME: 这个似乎不应该出问题
-					emit_push(itoa(ds->p[j]->dims[k]->offsets[m]));
+					emit_push(mt_itoa(ds->p[j]->dims[k]->offsets[m]));
 				}
 				emit_push("};");
 			}
 		}
 		t_offset_i = token_new();
-		emit_push("for(", int_type, " ", t_offset_i, "=0;", t_offset_i, "<", itoa(nind[i]), ";", t_offset_i, "++){");
+		emit_push("for(", int_type, " ", t_offset_i, "=0;", t_offset_i, "<", mt_itoa(nind[i]), ";", t_offset_i, "++){");
 		for (j=0; j<ds->n; j++)
 			if (offset[j])
 			{
