@@ -18,6 +18,7 @@ datacopy_f	datacopy_121_memcpy;
 block2data_f	block2data_trivial;
 block2data_f	block2data_arithmetic;
 block2data_f	block2data_dense;
+block2data_f	block2data_sparse_const;
 
 
 optimize_f	optimize_block;

@@ -1,4 +1,4 @@
-
+﻿
 #include	<stdio.h>
 #include	<string.h>
 
@@ -42,7 +42,7 @@ static	void *	alloc(target_c99 _this, int_t size)
 	char	* res = token_new();
 
 	emit_start((target)_this);
-	emit_push("void *", res, "=malloc(", itoa(size), ");");
+	emit_push("void *", res, "=malloc(", mt_itoa(size), ");");
 	emit_finish();
 
 	return	res;
@@ -138,6 +138,7 @@ target	target_c99_new()
 
 	_base->block2data_p = NULL;
 	target_register_block2data(_base, block2data_arithmetic);
+	target_register_block2data(_base, block2data_sparse_const);
 
 	_base->optimize_p = NULL;
 
@@ -167,5 +168,4 @@ void	target_c99_dump(target t, FILE *fp)
 
 	return;
 }
-
 

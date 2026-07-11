@@ -1,0 +1,335 @@
+0 verbose cli D:\softwires\node\node.exe D:\softwires\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v25.6.1
+3 silly config load:file:D:\softwires\node\node_modules\npm\npmrc
+4 silly config load:file:D:\buaa_study\second_year_2\科研课堂\metatensor-main\.npmrc
+5 silly config load:file:C:\Users\legion\.npmrc
+6 silly config load:file:D:\softwires\node\node_global\etc\npmrc
+7 verbose title npm exec petdex login
+8 verbose argv "exec" "--cache" ".\\.npm-cache" "--" "petdex" "login"
+9 verbose logfile logs-max:10 dir:D:\buaa_study\second_year_2\科研课堂\metatensor-main\.npm-cache\_logs\2026-06-16T13_55_58_104Z-
+10 verbose logfile D:\buaa_study\second_year_2\科研课堂\metatensor-main\.npm-cache\_logs\2026-06-16T13_55_58_104Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 http fetch GET 200 https://registry.npmmirror.com/petdex 67ms (cache miss)
+14 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+15 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+16 warn exec The following package was not found and will be installed: petdex@0.4.3
+17 silly idealTree buildDeps
+18 silly fetch manifest petdex@0.4.3
+19 silly packumentCache full:https://registry.npmmirror.com/petdex cache-miss
+20 http fetch GET 200 https://registry.npmmirror.com/npm 111ms
+21 http fetch GET 200 https://registry.npmmirror.com/petdex 54ms (cache miss)
+22 silly packumentCache full:https://registry.npmmirror.com/petdex set size:10908 disposed:false
+23 silly placeDep ROOT petdex@0.4.3 OK for:  want: 0.4.3
+24 silly fetch manifest @clack/prompts@^1.3.0
+25 silly packumentCache full:https://registry.npmmirror.com/@clack%2fprompts cache-miss
+26 silly fetch manifest jszip@^3.10.1
+27 silly packumentCache full:https://registry.npmmirror.com/jszip cache-miss
+28 silly fetch manifest picocolors@^1.1.1
+29 silly packumentCache full:https://registry.npmmirror.com/picocolors cache-miss
+30 silly fetch manifest @napi-rs/keyring@^1.1.6
+31 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring cache-miss
+32 http fetch GET 200 https://registry.npmmirror.com/@clack%2fprompts 23ms (cache miss)
+33 silly packumentCache full:https://registry.npmmirror.com/@clack%2fprompts set size:43509 disposed:false
+34 http fetch GET 200 https://registry.npmmirror.com/jszip 27ms (cache miss)
+35 silly packumentCache full:https://registry.npmmirror.com/jszip set size:17871 disposed:false
+36 http fetch GET 200 https://registry.npmmirror.com/picocolors 38ms (cache miss)
+37 silly packumentCache full:https://registry.npmmirror.com/picocolors set size:4040 disposed:false
+38 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring 41ms (cache miss)
+39 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring set size:13229 disposed:false
+40 silly placeDep ROOT @clack/prompts@1.5.1 OK for: petdex@0.4.3 want: ^1.3.0
+41 silly placeDep ROOT @napi-rs/keyring@1.3.0 OK for: petdex@0.4.3 want: ^1.1.6
+42 silly placeDep ROOT jszip@3.10.1 OK for: petdex@0.4.3 want: ^3.10.1
+43 silly placeDep ROOT picocolors@1.1.1 OK for: petdex@0.4.3 want: ^1.1.1
+44 silly fetch manifest fast-string-width@^3.0.2
+45 silly packumentCache full:https://registry.npmmirror.com/fast-string-width cache-miss
+46 silly fetch manifest fast-wrap-ansi@^0.2.0
+47 silly packumentCache full:https://registry.npmmirror.com/fast-wrap-ansi cache-miss
+48 silly fetch manifest sisteransi@^1.0.5
+49 silly packumentCache full:https://registry.npmmirror.com/sisteransi cache-miss
+50 silly fetch manifest @clack/core@1.4.1
+51 silly packumentCache full:https://registry.npmmirror.com/@clack%2fcore cache-miss
+52 silly fetch manifest @napi-rs/keyring-darwin-arm64@1.3.0
+53 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-arm64 cache-miss
+54 silly fetch manifest @napi-rs/keyring-linux-arm64-gnu@1.3.0
+55 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-gnu cache-miss
+56 silly fetch manifest @napi-rs/keyring-linux-arm64-musl@1.3.0
+57 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-musl cache-miss
+58 silly fetch manifest @napi-rs/keyring-win32-arm64-msvc@1.3.0
+59 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-arm64-msvc cache-miss
+60 silly fetch manifest @napi-rs/keyring-darwin-x64@1.3.0
+61 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-x64 cache-miss
+62 silly fetch manifest @napi-rs/keyring-win32-x64-msvc@1.3.0
+63 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-x64-msvc cache-miss
+64 silly fetch manifest @napi-rs/keyring-linux-x64-gnu@1.3.0
+65 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-gnu cache-miss
+66 silly fetch manifest @napi-rs/keyring-linux-x64-musl@1.3.0
+67 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-musl cache-miss
+68 silly fetch manifest @napi-rs/keyring-freebsd-x64@1.3.0
+69 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-freebsd-x64 cache-miss
+70 silly fetch manifest @napi-rs/keyring-win32-ia32-msvc@1.3.0
+71 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-ia32-msvc cache-miss
+72 silly fetch manifest @napi-rs/keyring-linux-arm-gnueabihf@1.3.0
+73 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm-gnueabihf cache-miss
+74 silly fetch manifest @napi-rs/keyring-linux-riscv64-gnu@1.3.0
+75 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-riscv64-gnu cache-miss
+76 silly fetch manifest lie@~3.3.0
+77 silly packumentCache full:https://registry.npmmirror.com/lie cache-miss
+78 silly fetch manifest pako@~1.0.2
+79 silly packumentCache full:https://registry.npmmirror.com/pako cache-miss
+80 silly fetch manifest readable-stream@~2.3.6
+81 silly packumentCache full:https://registry.npmmirror.com/readable-stream cache-miss
+82 silly fetch manifest setimmediate@^1.0.5
+83 silly packumentCache full:https://registry.npmmirror.com/setimmediate cache-miss
+84 http fetch GET 200 https://registry.npmmirror.com/fast-string-width 64ms (cache miss)
+85 silly packumentCache full:https://registry.npmmirror.com/fast-string-width set size:5063 disposed:false
+86 http fetch GET 200 https://registry.npmmirror.com/sisteransi 65ms (cache miss)
+87 silly packumentCache full:https://registry.npmmirror.com/sisteransi set size:3997 disposed:false
+88 http fetch GET 200 https://registry.npmmirror.com/fast-wrap-ansi 67ms (cache miss)
+89 silly packumentCache full:https://registry.npmmirror.com/fast-wrap-ansi set size:4428 disposed:false
+90 http fetch GET 200 https://registry.npmmirror.com/@clack%2fcore 70ms (cache miss)
+91 silly packumentCache full:https://registry.npmmirror.com/@clack%2fcore set size:36796 disposed:false
+92 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-riscv64-gnu 72ms (cache miss)
+93 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-riscv64-gnu set size:3549 disposed:false
+94 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-gnu 75ms (cache miss)
+95 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-gnu set size:8957 disposed:false
+96 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-arm64-msvc 77ms (cache miss)
+97 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-arm64-msvc set size:8974 disposed:false
+98 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-gnu 78ms (cache miss)
+99 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-gnu set size:8967 disposed:false
+100 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-x64 79ms (cache miss)
+101 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-x64 set size:8789 disposed:false
+102 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-arm64 80ms (cache miss)
+103 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-darwin-arm64 set size:8923 disposed:false
+104 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-musl 80ms (cache miss)
+105 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm64-musl set size:9011 disposed:false
+106 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-x64-msvc 80ms (cache miss)
+107 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-x64-msvc set size:8896 disposed:false
+108 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-freebsd-x64 80ms (cache miss)
+109 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-freebsd-x64 set size:8865 disposed:false
+110 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-musl 82ms (cache miss)
+111 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-x64-musl set size:9004 disposed:false
+112 http fetch GET 200 https://registry.npmmirror.com/lie 83ms (cache miss)
+113 silly packumentCache full:https://registry.npmmirror.com/lie set size:14022 disposed:false
+114 http fetch GET 200 https://registry.npmmirror.com/pako 84ms (cache miss)
+115 silly packumentCache full:https://registry.npmmirror.com/pako set size:21742 disposed:false
+116 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm-gnueabihf 85ms (cache miss)
+117 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-linux-arm-gnueabihf set size:8979 disposed:false
+118 http fetch GET 200 https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-ia32-msvc 86ms (cache miss)
+119 silly packumentCache full:https://registry.npmmirror.com/@napi-rs%2fkeyring-win32-ia32-msvc set size:8938 disposed:false
+120 http fetch GET 200 https://registry.npmmirror.com/setimmediate 86ms (cache miss)
+121 silly packumentCache full:https://registry.npmmirror.com/setimmediate set size:5233 disposed:false
+122 http fetch GET 200 https://registry.npmmirror.com/readable-stream 87ms (cache miss)
+123 silly packumentCache full:https://registry.npmmirror.com/readable-stream set size:40678 disposed:false
+124 silly placeDep ROOT @clack/core@1.4.1 OK for: @clack/prompts@1.5.1 want: 1.4.1
+125 silly placeDep ROOT fast-string-width@3.0.2 OK for: @clack/prompts@1.5.1 want: ^3.0.2
+126 silly placeDep ROOT fast-wrap-ansi@0.2.2 OK for: @clack/prompts@1.5.1 want: ^0.2.0
+127 silly placeDep ROOT sisteransi@1.0.5 OK for: @clack/prompts@1.5.1 want: ^1.0.5
+128 silly fetch manifest fast-string-truncated-width@^3.0.2
+129 silly packumentCache full:https://registry.npmmirror.com/fast-string-truncated-width cache-miss
+130 http fetch GET 200 https://registry.npmmirror.com/fast-string-truncated-width 16ms (cache miss)
+131 silly packumentCache full:https://registry.npmmirror.com/fast-string-truncated-width set size:5564 disposed:false
+132 silly placeDep ROOT @napi-rs/keyring-darwin-arm64@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+133 silly placeDep ROOT @napi-rs/keyring-darwin-x64@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+134 silly placeDep ROOT @napi-rs/keyring-freebsd-x64@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+135 silly placeDep ROOT @napi-rs/keyring-linux-arm-gnueabihf@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+136 silly placeDep ROOT @napi-rs/keyring-linux-arm64-gnu@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+137 silly placeDep ROOT @napi-rs/keyring-linux-arm64-musl@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+138 silly placeDep ROOT @napi-rs/keyring-linux-riscv64-gnu@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+139 silly placeDep ROOT @napi-rs/keyring-linux-x64-gnu@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+140 silly placeDep ROOT @napi-rs/keyring-linux-x64-musl@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+141 silly placeDep ROOT @napi-rs/keyring-win32-arm64-msvc@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+142 silly placeDep ROOT @napi-rs/keyring-win32-ia32-msvc@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+143 silly placeDep ROOT @napi-rs/keyring-win32-x64-msvc@1.3.0 OK for: @napi-rs/keyring@1.3.0 want: 1.3.0
+144 silly placeDep ROOT fast-string-truncated-width@3.0.3 OK for: fast-string-width@3.0.2 want: ^3.0.2
+145 silly placeDep ROOT lie@3.3.0 OK for: jszip@3.10.1 want: ~3.3.0
+146 silly placeDep ROOT pako@1.0.11 OK for: jszip@3.10.1 want: ~1.0.2
+147 silly placeDep ROOT readable-stream@2.3.8 OK for: jszip@3.10.1 want: ~2.3.6
+148 silly placeDep ROOT setimmediate@1.0.5 OK for: jszip@3.10.1 want: ^1.0.5
+149 silly fetch manifest immediate@~3.0.5
+150 silly packumentCache full:https://registry.npmmirror.com/immediate cache-miss
+151 silly fetch manifest core-util-is@~1.0.0
+152 silly packumentCache full:https://registry.npmmirror.com/core-util-is cache-miss
+153 silly fetch manifest inherits@~2.0.3
+154 silly packumentCache full:https://registry.npmmirror.com/inherits cache-miss
+155 silly fetch manifest isarray@~1.0.0
+156 silly packumentCache full:https://registry.npmmirror.com/isarray cache-miss
+157 silly fetch manifest process-nextick-args@~2.0.0
+158 silly packumentCache full:https://registry.npmmirror.com/process-nextick-args cache-miss
+159 silly fetch manifest safe-buffer@~5.1.1
+160 silly packumentCache full:https://registry.npmmirror.com/safe-buffer cache-miss
+161 silly fetch manifest string_decoder@~1.1.1
+162 silly packumentCache full:https://registry.npmmirror.com/string_decoder cache-miss
+163 silly fetch manifest util-deprecate@~1.0.1
+164 silly packumentCache full:https://registry.npmmirror.com/util-deprecate cache-miss
+165 http fetch GET 200 https://registry.npmmirror.com/isarray 22ms (cache miss)
+166 silly packumentCache full:https://registry.npmmirror.com/isarray set size:3703 disposed:false
+167 http fetch GET 200 https://registry.npmmirror.com/util-deprecate 25ms (cache miss)
+168 silly packumentCache full:https://registry.npmmirror.com/util-deprecate set size:2289 disposed:false
+169 http fetch GET 200 https://registry.npmmirror.com/inherits 27ms (cache miss)
+170 silly packumentCache full:https://registry.npmmirror.com/inherits set size:3419 disposed:false
+171 http fetch GET 200 https://registry.npmmirror.com/string_decoder 27ms (cache miss)
+172 silly packumentCache full:https://registry.npmmirror.com/string_decoder set size:5759 disposed:false
+173 http fetch GET 200 https://registry.npmmirror.com/core-util-is 29ms (cache miss)
+174 silly packumentCache full:https://registry.npmmirror.com/core-util-is set size:1796 disposed:false
+175 http fetch GET 200 https://registry.npmmirror.com/safe-buffer 28ms (cache miss)
+176 silly packumentCache full:https://registry.npmmirror.com/safe-buffer set size:11685 disposed:false
+177 http fetch GET 200 https://registry.npmmirror.com/process-nextick-args 30ms (cache miss)
+178 silly packumentCache full:https://registry.npmmirror.com/process-nextick-args set size:3341 disposed:false
+179 http fetch GET 200 https://registry.npmmirror.com/immediate 32ms (cache miss)
+180 silly packumentCache full:https://registry.npmmirror.com/immediate set size:10946 disposed:false
+181 silly placeDep ROOT immediate@3.0.6 OK for: lie@3.3.0 want: ~3.0.5
+182 silly placeDep ROOT core-util-is@1.0.3 OK for: readable-stream@2.3.8 want: ~1.0.0
+183 silly placeDep ROOT inherits@2.0.4 OK for: readable-stream@2.3.8 want: ~2.0.3
+184 silly placeDep ROOT isarray@1.0.0 OK for: readable-stream@2.3.8 want: ~1.0.0
+185 silly placeDep ROOT process-nextick-args@2.0.1 OK for: readable-stream@2.3.8 want: ~2.0.0
+186 silly placeDep ROOT safe-buffer@5.1.2 OK for: readable-stream@2.3.8 want: ~5.1.1
+187 silly placeDep ROOT string_decoder@1.1.1 OK for: readable-stream@2.3.8 want: ~1.1.1
+188 silly placeDep ROOT util-deprecate@1.0.2 OK for: readable-stream@2.3.8 want: ~1.0.1
+189 silly reify moves {}
+190 silly audit bulk request {
+190 silly audit   petdex: [ '0.4.3' ],
+190 silly audit   '@clack/prompts': [ '1.5.1' ],
+190 silly audit   '@napi-rs/keyring': [ '1.3.0' ],
+190 silly audit   jszip: [ '3.10.1' ],
+190 silly audit   picocolors: [ '1.1.1' ],
+190 silly audit   '@clack/core': [ '1.4.1' ],
+190 silly audit   'fast-string-width': [ '3.0.2' ],
+190 silly audit   'fast-wrap-ansi': [ '0.2.2' ],
+190 silly audit   sisteransi: [ '1.0.5' ],
+190 silly audit   '@napi-rs/keyring-darwin-arm64': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-darwin-x64': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-freebsd-x64': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-arm-gnueabihf': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-arm64-gnu': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-arm64-musl': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-riscv64-gnu': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-x64-gnu': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-linux-x64-musl': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-win32-arm64-msvc': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-win32-ia32-msvc': [ '1.3.0' ],
+190 silly audit   '@napi-rs/keyring-win32-x64-msvc': [ '1.3.0' ],
+190 silly audit   'fast-string-truncated-width': [ '3.0.3' ],
+190 silly audit   lie: [ '3.3.0' ],
+190 silly audit   pako: [ '1.0.11' ],
+190 silly audit   'readable-stream': [ '2.3.8' ],
+190 silly audit   setimmediate: [ '1.0.5' ],
+190 silly audit   immediate: [ '3.0.6' ],
+190 silly audit   'core-util-is': [ '1.0.3' ],
+190 silly audit   inherits: [ '2.0.4' ],
+190 silly audit   isarray: [ '1.0.0' ],
+190 silly audit   'process-nextick-args': [ '2.0.1' ],
+190 silly audit   'safe-buffer': [ '5.1.2' ],
+190 silly audit   string_decoder: [ '1.1.1' ],
+190 silly audit   'util-deprecate': [ '1.0.2' ]
+190 silly audit }
+191 http cache util-deprecate@https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz 0ms (cache hit)
+192 http cache safe-buffer@https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz 0ms (cache hit)
+193 http cache process-nextick-args@https://registry.npmmirror.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz 0ms (cache hit)
+194 http cache string_decoder@https://registry.npmmirror.com/string_decoder/-/string_decoder-1.1.1.tgz 0ms (cache hit)
+195 http cache isarray@https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz 0ms (cache hit)
+196 http cache inherits@https://registry.npmmirror.com/inherits/-/inherits-2.0.4.tgz 0ms (cache hit)
+197 http cache immediate@https://registry.npmmirror.com/immediate/-/immediate-3.0.6.tgz 0ms (cache hit)
+198 http cache core-util-is@https://registry.npmmirror.com/core-util-is/-/core-util-is-1.0.3.tgz 0ms (cache hit)
+199 http cache setimmediate@https://registry.npmmirror.com/setimmediate/-/setimmediate-1.0.5.tgz 0ms (cache hit)
+200 http cache pako@https://registry.npmmirror.com/pako/-/pako-1.0.11.tgz 0ms (cache hit)
+201 http cache readable-stream@https://registry.npmmirror.com/readable-stream/-/readable-stream-2.3.8.tgz 0ms (cache hit)
+202 http cache lie@https://registry.npmmirror.com/lie/-/lie-3.3.0.tgz 0ms (cache hit)
+203 http cache @napi-rs/keyring-win32-x64-msvc@https://registry.npmmirror.com/@napi-rs/keyring-win32-x64-msvc/-/keyring-win32-x64-msvc-1.3.0.tgz 0ms (cache hit)
+204 http cache sisteransi@https://registry.npmmirror.com/sisteransi/-/sisteransi-1.0.5.tgz 0ms (cache hit)
+205 http cache fast-string-truncated-width@https://registry.npmmirror.com/fast-string-truncated-width/-/fast-string-truncated-width-3.0.3.tgz 0ms (cache hit)
+206 http cache @clack/core@https://registry.npmmirror.com/@clack/core/-/core-1.4.1.tgz 0ms (cache hit)
+207 http cache fast-string-width@https://registry.npmmirror.com/fast-string-width/-/fast-string-width-3.0.2.tgz 0ms (cache hit)
+208 http cache fast-wrap-ansi@https://registry.npmmirror.com/fast-wrap-ansi/-/fast-wrap-ansi-0.2.2.tgz 0ms (cache hit)
+209 http cache @clack/prompts@https://registry.npmmirror.com/@clack/prompts/-/prompts-1.5.1.tgz 0ms (cache hit)
+210 http cache @napi-rs/keyring@https://registry.npmmirror.com/@napi-rs/keyring/-/keyring-1.3.0.tgz 0ms (cache hit)
+211 http cache picocolors@https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+212 silly tarball no local data for util-deprecate@https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz. Extracting by manifest.
+213 http cache jszip@https://registry.npmmirror.com/jszip/-/jszip-3.10.1.tgz 0ms (cache hit)
+214 silly tarball no local data for safe-buffer@https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz. Extracting by manifest.
+215 silly tarball no local data for process-nextick-args@https://registry.npmmirror.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz. Extracting by manifest.
+216 silly tarball no local data for string_decoder@https://registry.npmmirror.com/string_decoder/-/string_decoder-1.1.1.tgz. Extracting by manifest.
+217 silly tarball no local data for isarray@https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz. Extracting by manifest.
+218 silly tarball no local data for inherits@https://registry.npmmirror.com/inherits/-/inherits-2.0.4.tgz. Extracting by manifest.
+219 silly tarball no local data for immediate@https://registry.npmmirror.com/immediate/-/immediate-3.0.6.tgz. Extracting by manifest.
+220 silly tarball no local data for core-util-is@https://registry.npmmirror.com/core-util-is/-/core-util-is-1.0.3.tgz. Extracting by manifest.
+221 silly tarball no local data for setimmediate@https://registry.npmmirror.com/setimmediate/-/setimmediate-1.0.5.tgz. Extracting by manifest.
+222 silly tarball no local data for pako@https://registry.npmmirror.com/pako/-/pako-1.0.11.tgz. Extracting by manifest.
+223 silly tarball no local data for readable-stream@https://registry.npmmirror.com/readable-stream/-/readable-stream-2.3.8.tgz. Extracting by manifest.
+224 silly tarball no local data for lie@https://registry.npmmirror.com/lie/-/lie-3.3.0.tgz. Extracting by manifest.
+225 silly tarball no local data for @napi-rs/keyring-win32-x64-msvc@https://registry.npmmirror.com/@napi-rs/keyring-win32-x64-msvc/-/keyring-win32-x64-msvc-1.3.0.tgz. Extracting by manifest.
+226 silly tarball no local data for sisteransi@https://registry.npmmirror.com/sisteransi/-/sisteransi-1.0.5.tgz. Extracting by manifest.
+227 silly tarball no local data for fast-string-truncated-width@https://registry.npmmirror.com/fast-string-truncated-width/-/fast-string-truncated-width-3.0.3.tgz. Extracting by manifest.
+228 http cache petdex@https://registry.npmmirror.com/petdex/-/petdex-0.4.3.tgz 0ms (cache hit)
+229 silly tarball no local data for @clack/core@https://registry.npmmirror.com/@clack/core/-/core-1.4.1.tgz. Extracting by manifest.
+230 silly tarball no local data for fast-string-width@https://registry.npmmirror.com/fast-string-width/-/fast-string-width-3.0.2.tgz. Extracting by manifest.
+231 silly tarball no local data for fast-wrap-ansi@https://registry.npmmirror.com/fast-wrap-ansi/-/fast-wrap-ansi-0.2.2.tgz. Extracting by manifest.
+232 silly tarball no local data for @clack/prompts@https://registry.npmmirror.com/@clack/prompts/-/prompts-1.5.1.tgz. Extracting by manifest.
+233 silly tarball no local data for @napi-rs/keyring@https://registry.npmmirror.com/@napi-rs/keyring/-/keyring-1.3.0.tgz. Extracting by manifest.
+234 silly tarball no local data for picocolors@https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz. Extracting by manifest.
+235 silly tarball no local data for jszip@https://registry.npmmirror.com/jszip/-/jszip-3.10.1.tgz. Extracting by manifest.
+236 silly tarball no local data for petdex@https://registry.npmmirror.com/petdex/-/petdex-0.4.3.tgz. Extracting by manifest.
+237 http fetch POST 404 https://registry.npmmirror.com/-/npm/v1/security/advisories/bulk 17ms
+238 verbose audit error HttpErrorGeneral: 404 Not Found - POST https://registry.npmmirror.com/-/npm/v1/security/advisories/bulk - [NOT_IMPLEMENTED] /-/npm/v1/security/* not implemented yet
+238 verbose audit error     at D:\softwires\node\node_modules\npm\node_modules\npm-registry-fetch\lib\check-response.js:103:15
+238 verbose audit error     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+238 verbose audit error     at async #getReport (D:\softwires\node\node_modules\npm\node_modules\@npmcli\arborist\lib\audit-report.js:275:19)
+238 verbose audit error     at async AuditReport.run (D:\softwires\node\node_modules\npm\node_modules\@npmcli\arborist\lib\audit-report.js:100:19) {
+238 verbose audit error   headers: [Object: null prototype] {
+238 verbose audit error     server: [ 'Tengine' ],
+238 verbose audit error     date: [ 'Tue, 16 Jun 2026 13:55:59 GMT' ],
+238 verbose audit error     'content-type': [ 'application/json' ],
+238 verbose audit error     'transfer-encoding': [ 'chunked' ],
+238 verbose audit error     connection: [ 'keep-alive' ],
+238 verbose audit error     'strict-transport-security': [ 'max-age=5184000' ],
+238 verbose audit error     via: [ 'cache8.cn8985[,404666]' ],
+238 verbose audit error     'timing-allow-origin': [ '*' ],
+238 verbose audit error     eagleid: [ 'b6306c0d17816181593563192e' ],
+238 verbose audit error     'x-fetch-attempts': [ '1' ]
+238 verbose audit error   },
+238 verbose audit error   statusCode: 404,
+238 verbose audit error   code: 'E404',
+238 verbose audit error   method: 'POST',
+238 verbose audit error   uri: 'https://registry.npmmirror.com/-/npm/v1/security/advisories/bulk',
+238 verbose audit error   body: {
+238 verbose audit error     error: '[NOT_IMPLEMENTED] /-/npm/v1/security/* not implemented yet'
+238 verbose audit error   },
+238 verbose audit error   pkgid: undefined
+238 verbose audit error }
+239 silly audit error [object Object]
+240 silly audit report null
+241 http fetch GET 200 https://cdn.npmmirror.com/packages/util-deprecate/1.0.2/util-deprecate-1.0.2.tgz 100ms (cache miss)
+242 http fetch GET 200 https://cdn.npmmirror.com/packages/inherits/2.0.4/inherits-2.0.4.tgz 101ms (cache miss)
+243 http fetch GET 200 https://cdn.npmmirror.com/packages/string_decoder/1.1.1/string_decoder-1.1.1.tgz 120ms (cache miss)
+244 http fetch GET 200 https://cdn.npmmirror.com/packages/sisteransi/1.0.5/sisteransi-1.0.5.tgz 125ms (cache miss)
+245 http fetch GET 200 https://cdn.npmmirror.com/packages/process-nextick-args/2.0.1/process-nextick-args-2.0.1.tgz 130ms (cache miss)
+246 http fetch GET 200 https://cdn.npmmirror.com/packages/immediate/3.0.6/immediate-3.0.6.tgz 130ms (cache miss)
+247 http fetch GET 200 https://cdn.npmmirror.com/packages/lie/3.3.0/lie-3.3.0.tgz 133ms (cache miss)
+248 http fetch GET 200 https://cdn.npmmirror.com/packages/%40napi-rs/keyring/1.3.0/keyring-1.3.0.tgz 133ms (cache miss)
+249 http fetch GET 200 https://cdn.npmmirror.com/packages/fast-string-truncated-width/3.0.3/fast-string-truncated-width-3.0.3.tgz 141ms (cache miss)
+250 http fetch GET 200 https://cdn.npmmirror.com/packages/safe-buffer/5.1.2/safe-buffer-5.1.2.tgz 147ms (cache miss)
+251 http fetch GET 200 https://cdn.npmmirror.com/packages/picocolors/1.1.1/picocolors-1.1.1.tgz 148ms (cache miss)
+252 http fetch GET 200 https://cdn.npmmirror.com/packages/isarray/1.0.0/isarray-1.0.0.tgz 153ms (cache miss)
+253 http fetch GET 200 https://cdn.npmmirror.com/packages/readable-stream/2.3.8/readable-stream-2.3.8.tgz 169ms (cache miss)
+254 http fetch GET 200 https://cdn.npmmirror.com/packages/%40clack/core/1.4.1/core-1.4.1.tgz 176ms (cache miss)
+255 http fetch GET 200 https://cdn.npmmirror.com/packages/fast-string-width/3.0.2/fast-string-width-3.0.2.tgz 228ms (cache miss)
+256 http fetch GET 200 https://cdn.npmmirror.com/packages/petdex/0.4.3/petdex-0.4.3.tgz 234ms (cache miss)
+257 http fetch GET 200 https://cdn.npmmirror.com/packages/pako/1.0.11/pako-1.0.11.tgz 254ms (cache miss)
+258 http fetch GET 200 https://cdn.npmmirror.com/packages/%40clack/prompts/1.5.1/prompts-1.5.1.tgz 261ms (cache miss)
+259 http fetch GET 200 https://cdn.npmmirror.com/packages/%40napi-rs/keyring-win32-x64-msvc/1.3.0/keyring-win32-x64-msvc-1.3.0.tgz 328ms (cache miss)
+260 http fetch GET 200 https://cdn.npmmirror.com/packages/fast-wrap-ansi/0.2.2/fast-wrap-ansi-0.2.2.tgz 363ms (cache miss)
+261 http fetch GET 200 https://cdn.npmmirror.com/packages/core-util-is/1.0.3/core-util-is-1.0.3.tgz 387ms (cache miss)
+262 http fetch GET 200 https://cdn.npmmirror.com/packages/setimmediate/1.0.5/setimmediate-1.0.5.tgz 426ms (cache miss)
+263 http fetch GET 200 https://cdn.npmmirror.com/packages/jszip/3.10.1/jszip-3.10.1.tgz 449ms (cache miss)
+264 verbose cwd D:\buaa_study\second_year_2\科研课堂\metatensor-main
+265 verbose os Windows_NT 10.0.26200
+266 verbose node v25.6.1
+267 verbose npm  v11.9.0
+268 notice
+268 notice New minor version of npm available! 11.9.0 -> 11.17.0
+268 notice Changelog: https://github.com/npm/cli/releases/tag/v11.17.0
+268 notice To update run: npm install -g npm@11.17.0
+268 notice  { force: true, Symbol(proc-log.meta): true }
+269 verbose exit 1
+270 verbose code 1

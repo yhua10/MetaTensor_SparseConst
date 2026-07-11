@@ -1,0 +1,63 @@
+CC      = gcc
+CFLAGS  = -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude
+LDLIBS  =
+
+DUMPS = \
+	dump_sparse.c \
+	dump_sparse_reverse.c \
+	dump_sparse_sum.c \
+	dump_sparse_double.c \
+	dump_sparse_2d.c \
+	dump_sparse_2d_sum.c \
+	dump_sparse_tuple.c \
+	dump_sparse_tuple_sum.c \
+	dump_sparse_ir.c \
+	dump_sparse_block.c \
+	dump_sparse_x_tuple.c \
+	dump_sparse_dual_tuple.c \
+	dump_sparse_dual_tuple_sum.c
+
+DUMP_OBJS = \
+	dump_sparse.o \
+	dump_sparse_reverse.o \
+	dump_sparse_sum.o \
+	dump_sparse_double.o \
+	dump_sparse_2d.o \
+	dump_sparse_2d_sum.o \
+	dump_sparse_tuple.o \
+	dump_sparse_tuple_sum.o \
+	dump_sparse_ir.o \
+	dump_sparse_block.o \
+	dump_sparse_x_tuple.o \
+	dump_sparse_dual_tuple.o \
+	dump_sparse_dual_tuple_sum.o
+
+OBJS = \
+	src/block.o \
+	src/datadesc.o \
+	src/plugins.o \
+	src/target_base.o \
+	targets/target_c99.o \
+	plugins/datacopy_foreach.o \
+	plugins/datacopy_121_reference.o \
+	plugins/block2data_arithmetic.o \
+	plugins/block2data_sparse_const.o
+
+test_sparse: main_test/test.sparse_const_basic.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+
+$(DUMPS): test_sparse
+	./test_sparse
+
+verify_sparse: main_test/test.sparse_const_verify.o $(DUMP_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ -lm
+
+run: test_sparse $(DUMP_OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	powershell -NoProfile -Command "$$paths = 'test_sparse.exe verify_sparse.exe $(DUMPS) $(DUMP_OBJS) $(OBJS) main_test/test.sparse_const_basic.o main_test/test.sparse_const_verify.o' -split ' '; Remove-Item -Force -ErrorAction SilentlyContinue $$paths; exit 0"
+
+.PHONY: clean run

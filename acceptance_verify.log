@@ -1,0 +1,3 @@
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -c -o main_test/test.sparse_const_verify.o main_test/test.sparse_const_verify.c
+gcc -O2 -Wall -Wno-error=incompatible-pointer-types -Iinclude -o verify_sparse main_test/test.sparse_const_verify.o dump_sparse.o -lm
+OK

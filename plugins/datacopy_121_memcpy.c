@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -772,8 +772,8 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 	char *t_src_i = named_token_new("accumulated_offset_src"); // 循环中的源位置下标，运行时使用若干变量名，该值在每个循环中通过t_src_i = t_tmp赋新值
 	emit_push("\n//part 1\n");
 
-	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", itoa(d->p[0]->offset0), ");");
-	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", itoa(d->p[1]->offset0), ");");
+	emit_push(dst_type, "*", t_dst_p, "=(", dst_type, "*)((char *)(", d->p[0]->ref.p_refname, ")+", mt_itoa(d->p[0]->offset0), ");");
+	emit_push(src_type, "*", t_src_p, "=(", src_type, "*)((char *)(", d->p[1]->ref.p_refname, ")+", mt_itoa(d->p[1]->offset0), ");");
 	emit_push(int_type, " ", t_dst_i, "=0;");
 	emit_push(int_type, " ", t_src_i, "=0;");
 	emit_push("\n//part 2\n");
@@ -794,28 +794,28 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 				char *t_src_offset_piece_p = named_token_new("piece_src_start"); // 源piece的start数组
 				char *t_dst_offset_piece_p = named_token_new("piece_dst_start"); // 目标piece的start数组
 
-				emit_push(int_type, " ", t_src_offset_piece_p, "[", itoa(mem_cpy_len), "]={", itoa(start_index1[0]));
+				emit_push(int_type, " ", t_src_offset_piece_p, "[", mt_itoa(mem_cpy_len), "]={", mt_itoa(start_index1[0]));
 				for (i = 1; i < mem_cpy_len; i++)
-					emit_push(",", itoa(start_index1[i]));
+					emit_push(",", mt_itoa(start_index1[i]));
 				emit_push("};"); // 该段代码之后得到dst的偏移数组
 
-				emit_push(int_type, " ", t_dst_offset_piece_p, "[", itoa(mem_cpy_len), "]={", itoa(start_index2[0]));
+				emit_push(int_type, " ", t_dst_offset_piece_p, "[", mt_itoa(mem_cpy_len), "]={", mt_itoa(start_index2[0]));
 				for (i = 1; i < mem_cpy_len; i++)
-					emit_push(",", itoa(start_index2[i]));
+					emit_push(",", mt_itoa(start_index2[i]));
 				emit_push("};"); // 该段代码之后得到dst的偏移数组
 
 				// 生成piece的长度数组
 				char *t_piece_len_p = named_token_new("piece_length"); // piece的长度数组
-				emit_push(int_type, " ", t_piece_len_p, "[", itoa(mem_cpy_len), "]={", itoa(end_index1[0] - start_index1[0]));
+				emit_push(int_type, " ", t_piece_len_p, "[", mt_itoa(mem_cpy_len), "]={", mt_itoa(end_index1[0] - start_index1[0]));
 				for (i = 1; i < mem_cpy_len; i++)
-					emit_push(",", itoa(end_index1[i] - start_index1[i]));
+					emit_push(",", mt_itoa(end_index1[i] - start_index1[i]));
 				emit_push("};"); // 该段代码之后得到dst的偏移数组
 
 				// 生成memcpy语句 ！！！！！！！！！该部分代码需要根据不同的平台进行修改！！！！！！
 				char *t_offset_i = named_token_new("loop"); // 每个维度对指标的循环变量
 				emit_push(int_type, " ", t_offset_i, ";");
 				// 应该从最后一层for循环开始改变复制过程
-				emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", itoa(mem_cpy_len), ";", t_offset_i, "++){");
+				emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", mt_itoa(mem_cpy_len), ";", t_offset_i, "++){");
 
 				// 生成memcpy(t_dst_p[offset],t_src_p[offset],len)
 
@@ -831,20 +831,20 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 				char *t_src_offset_single_p = named_token_new("single_src_start");
 				char *t_dst_offset_single_p = named_token_new("single_dst_start");
 
-				emit_push(int_type, " ", t_src_offset_single_p, "[", itoa(single_cpy_len), "]={", itoa(single_index1[0]));
+				emit_push(int_type, " ", t_src_offset_single_p, "[", mt_itoa(single_cpy_len), "]={", mt_itoa(single_index1[0]));
 				for (i = 1; i < single_cpy_len; i++)
-					emit_push(",", itoa(single_index1[i]));
+					emit_push(",", mt_itoa(single_index1[i]));
 				emit_push("};"); // 该段代码之后得到点对点复制的src的偏移数组
 
-				emit_push(int_type, " ", t_dst_offset_single_p, "[", itoa(single_cpy_len), "]={", itoa(single_index2[0]));
+				emit_push(int_type, " ", t_dst_offset_single_p, "[", mt_itoa(single_cpy_len), "]={", mt_itoa(single_index2[0]));
 				for (i = 1; i < single_cpy_len; i++)
-					emit_push(",", itoa(single_index2[i]));
+					emit_push(",", mt_itoa(single_index2[i]));
 				emit_push("};"); // 该段代码之后得到点对点复制的dst的偏移数组
 
 				// 生成single var copy语句
 				char *t_offset_single_i = named_token_new("loop"); // 每个维度对指标的循环变量
 				emit_push(int_type, " ", t_offset_single_i, ";");
-				emit_push("for(", t_offset_single_i, "=0;", t_offset_single_i, "<", itoa(single_cpy_len), ";", t_offset_single_i, "++){");
+				emit_push("for(", t_offset_single_i, "=0;", t_offset_single_i, "<", mt_itoa(single_cpy_len), ";", t_offset_single_i, "++){");
 
 				emit_push(t_dst_p, "[", t_dst_i, "+", t_dst_offset_single_p, "[", t_offset_single_i, "]]=", t_src_p, "[", t_src_i, "+", t_src_offset_single_p, "[", t_offset_single_i, "]];");
 
@@ -853,9 +853,9 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 				t_dst_offset_single_p = named_token_new("single_copy_list_dst"); // 除了通过piece，memcpy进行复制的元素之外，只通过点对点进行复制的元素的偏移量列表
 				t_src_offset_single_p = named_token_new("single_copy_list_src");
 
-				emit_push(int_type, " ", t_dst_offset_single_p, "[", itoa(single_cpy_len), "]={", itoa(single_index1[0]));
+				emit_push(int_type, " ", t_dst_offset_single_p, "[", mt_itoa(single_cpy_len), "]={", mt_itoa(single_index1[0]));
 				for (i = 1; i < single_cpy_len; i++)
-					emit_push(",", itoa(single_index1[i]));
+					emit_push(",", mt_itoa(single_index1[i]));
 				emit_push("};"); // 该段代码之后得到除piece元素之外的点对点复制的数组
 
 				// 通过t_src_i, t_dst_i以及piece对应的start/end index, single对应的start/end index, 以及piece/single对应的offset数组，可以计算出每个元素的偏移量，从而得到每个元素的地址，从而得到每个元素的值。
@@ -873,9 +873,9 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 		char *t_src_offset_p = named_token_new("t_src_offset_p");
 		emit_push("\n//part 3\n");
 		// TODO: 这里的偏移量列表有可优化的潜力，比如等差数列等可以直接计算而不查表。
-		emit_push(int_type, " ", t_dst_offset_p, "[", itoa(d_dst->n_entry), "]={", itoa(d_dst->offsets[0]));
+		emit_push(int_type, " ", t_dst_offset_p, "[", mt_itoa(d_dst->n_entry), "]={", mt_itoa(d_dst->offsets[0]));
 		for (i = 1; i < d_dst->n_entry; i++)
-			emit_push(",", itoa(d_dst->offsets[i]));
+			emit_push(",", mt_itoa(d_dst->offsets[i]));
 		emit_push("};"); // 该段代码之后得到dst的偏移数组
 		emit_push("\n//part 4\n");
 		// FIXME: 这里没有完整考虑稀疏的情况，需要额外处理
@@ -890,7 +890,7 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 			dimdesc d_src = d->p[1]->dims[i_src];
 			emit_assert(d_src->n_tuple == 1);
 			emit_assert(d_dst->n_entry == d_src->n_entry);
-			emit_push(int_type, " ", t_src_offset_p, "[", itoa(d_src->n_entry), "]={");
+			emit_push(int_type, " ", t_src_offset_p, "[", mt_itoa(d_src->n_entry), "]={");
 			for (i = 0; i < d_dst->n_entry; i++)
 			{
 				for (j = 0; j < d_src->n_entry && d_dst->indices[i * d_dst->n_tuple] != d_src->indices[j * d_src->n_tuple]; j++)
@@ -898,7 +898,7 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 				emit_assert(j < d_src->n_entry);
 				if (i > 0)
 					emit_push(",");
-				emit_push(itoa(d_src->offsets[j]));
+				emit_push(mt_itoa(d_src->offsets[j]));
 			}
 			emit_push("};");
 		}
@@ -907,7 +907,7 @@ int* single_index2 = (int *)malloc(sizeof(int) * num_of_single_ele);
 		char *t_offset_i = named_token_new("loop"); // 每个维度对指标的循环变量
 
 		emit_push(int_type, " ", t_offset_i, ";");
-		emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", itoa(d_dst->n_entry), ";", t_offset_i, "++){");
+		emit_push("for(", t_offset_i, "=0;", t_offset_i, "<", mt_itoa(d_dst->n_entry), ";", t_offset_i, "++){");
 
 		char *t_tmp = named_token_new("accumulated_offset_dst");
 		emit_push(int_type, " ", t_tmp, "=", t_dst_i, "+", t_dst_offset_p, "[", t_offset_i, "];");
