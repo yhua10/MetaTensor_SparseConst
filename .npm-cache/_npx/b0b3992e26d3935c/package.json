@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "petdex": "^0.4.3"
+  },
+  "_npx": {
+    "packages": [
+      "petdex"
+    ]
+  }
+}

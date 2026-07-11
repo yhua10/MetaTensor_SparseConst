@@ -1,4 +1,4 @@
-
+﻿
 #include	"target_base.h"
 #include	"gc_malloc.h"
 
@@ -122,7 +122,7 @@ char *	token_new()
 	return	p;
 }
 
-char *	itoa(int_t i)
+char *	mt_itoa(int_t i)
 {
 	size_t	s = snprintf(NULL, 0, "%lu", i);
 
