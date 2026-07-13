@@ -1,7 +1,5 @@
 # `topic_sparse_const` 完整实现说明
 
-这份 README 面向暂时还不熟悉 `metatensor` 项目的人。它不默认你已经理解 IR、`datadesc`、`block2data` 或 `optimize_f`，而是从“这个题到底在优化什么”开始讲。
-
 ## 1. 一句话概括
 
 本次工作的目标是优化下面这种表达式：
