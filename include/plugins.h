@@ -19,6 +19,7 @@ block2data_f	block2data_trivial;
 block2data_f	block2data_arithmetic;
 block2data_f	block2data_dense;
 block2data_f	block2data_sparse_const;
+block2data_f	block2data_sparse_const_optimized;
 
 
 optimize_f	optimize_block;

@@ -9,7 +9,6 @@
 #define BLOCK 32
 #define XTUP 4
 #define MAX_FLOAT_N BIG
-#define OPT_PASS_NNZ 5
 
 static float K_float[N] = {
 	0.5f, 0.0f, 0.0f, 1.2f,
@@ -37,6 +36,10 @@ static float K_tuple_dense[N2] = {
 	0.0f, 0.0f, 0.0f, -0.75f,
 };
 
+static float K_broadcast_col[COLS] = {
+	0.0f, 2.0f, -1.0f, 0.0f,
+};
+
 static float K_ir[BIG];
 static float K_block[BLOCK];
 static float K_x_tuple_dense[XTUP] = {
@@ -49,9 +52,13 @@ static float K_dual_tuple_dense[XTUP] = {
 void compute_sparse(float *x, float *out);
 void compute_sparse_reverse(float *x, float *out);
 void compute_sparse_sum(float *x, float *out);
+void compute_sparse_zero(float *x, float *out);
+void compute_sparse_zero_sum(float *x, float *out);
 void compute_sparse_double(double *x, double *out);
 void compute_sparse_2d(float *x, float *out);
 void compute_sparse_2d_sum(float *x, float *out);
+void compute_sparse_broadcast(float *x, float *out);
+void compute_sparse_broadcast_sum(float *x, float *out);
 void compute_sparse_tuple(float *x, float *out);
 void compute_sparse_tuple_sum(float *x, float *out);
 void compute_sparse_ir(float *x, float *out);
@@ -96,6 +103,21 @@ static void compute_sum_float_naive(float *x, float *out)
 		out[i] = K_float[i] + x[i];
 }
 
+static void compute_prod_zero_naive(float *x, float *out)
+{
+	int i;
+	(void)x;
+	for (i=0; i<N; i++)
+		out[i] = 0.0f;
+}
+
+static void compute_sum_zero_naive(float *x, float *out)
+{
+	int i;
+	for (i=0; i<N; i++)
+		out[i] = x[i];
+}
+
 static void compute_prod_double_naive(double *x, double *out)
 {
 	int i;
@@ -122,6 +144,22 @@ static void compute_sum_2d_naive(float *x, float *out)
 	int i;
 	for (i=0; i<N2; i++)
 		out[i] = K_2d[i] + x[i];
+}
+
+static void compute_prod_broadcast_naive(float *x, float *out)
+{
+	int r, c;
+	for (r=0; r<ROWS; r++)
+		for (c=0; c<COLS; c++)
+			out[r * COLS + c] = K_broadcast_col[c] * x[r * COLS + c];
+}
+
+static void compute_sum_broadcast_naive(float *x, float *out)
+{
+	int r, c;
+	for (r=0; r<ROWS; r++)
+		for (c=0; c<COLS; c++)
+			out[r * COLS + c] = K_broadcast_col[c] + x[r * COLS + c];
 }
 
 static void compute_sum_tuple_naive(float *x, float *out)
@@ -169,11 +207,9 @@ static void compute_sum_dual_tuple_naive(float *x, float *out)
 static void compute_prod_opt_pass_naive(float *x, float *out)
 {
 	int i;
-	int j = 0;
 
 	for (i=0; i<N; i++)
-		if (K_float[i] != 0.0f)
-			out[j++] = K_float[i] * x[i];
+		out[i] = K_float[i] * x[i];
 }
 
 static int check_float_case(const char *name, void (*generated)(float *, float *),
@@ -265,6 +301,10 @@ int main(void)
 		return 1;
 	if (check_float_case("sum", compute_sparse_sum, compute_sum_float_naive, ramp, N))
 		return 1;
+	if (check_float_case("zero", compute_sparse_zero, compute_prod_zero_naive, ramp, N))
+		return 1;
+	if (check_float_case("zero_sum", compute_sparse_zero_sum, compute_sum_zero_naive, ramp, N))
+		return 1;
 	if (check_double_case("double", dones))
 		return 1;
 	if (check_double_case("double", dramp))
@@ -272,6 +312,10 @@ int main(void)
 	if (check_float_case("2d", compute_sparse_2d, compute_prod_2d_naive, grid, N2))
 		return 1;
 	if (check_float_case("2d_sum", compute_sparse_2d_sum, compute_sum_2d_naive, grid, N2))
+		return 1;
+	if (check_float_case("broadcast", compute_sparse_broadcast, compute_prod_broadcast_naive, grid, N2))
+		return 1;
+	if (check_float_case("broadcast_sum", compute_sparse_broadcast_sum, compute_sum_broadcast_naive, grid, N2))
 		return 1;
 	if (check_float_case("tuple", compute_sparse_tuple, compute_prod_tuple_naive, grid, N2))
 		return 1;
@@ -287,7 +331,7 @@ int main(void)
 		return 1;
 	if (check_float_case("dual_tuple_sum", compute_sparse_dual_tuple_sum, compute_sum_dual_tuple_naive, xtup, XTUP))
 		return 1;
-	if (check_float_case("opt_pass", compute_sparse_opt_pass, compute_prod_opt_pass_naive, ramp, OPT_PASS_NNZ))
+	if (check_float_case("opt_pass", compute_sparse_opt_pass, compute_prod_opt_pass_naive, ramp, N))
 		return 1;
 
 	printf("OK\n");

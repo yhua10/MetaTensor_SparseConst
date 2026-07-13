@@ -179,15 +179,15 @@ datadesc_set	block2data_arithmetic(target t, block ob)
 	switch (ob->p.b[0]->type)
 	{
 		case block_builtin_reduce_sum :
-			emit_push(var[nd], "[", idx[nd],"]", "=0");
-			for (i=0; i<nd; i++)
+			emit_push(var[nd], "[", idx[nd],"]", "=", var[0], "[", idx[0], "]");
+			for (i=1; i<nd; i++)
 				emit_push("+", var[i],"[", idx[i],"]");
 			emit_push(";");
 			break;
 
 		case block_builtin_reduce_prod :
-			emit_push(var[nd], "[", idx[nd],"]", "=1");
-			for (i=0; i<nd; i++)
+			emit_push(var[nd], "[", idx[nd],"]", "=", var[0], "[", idx[0], "]");
+			for (i=1; i<nd; i++)
 				emit_push("*", var[i],"[", idx[i],"]");
 			emit_push(";");
 			break;

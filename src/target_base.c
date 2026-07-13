@@ -1,4 +1,4 @@
-﻿
+
 #include	"target_base.h"
 #include	"gc_malloc.h"
 
@@ -24,6 +24,8 @@ datadesc_set	block2data(target t, block ob)
 {
 	function_c	* p;
 	datadesc_set	res;
+
+	ob = optimize(t, ob);
 
 	p = t->block2data_p;
 	while (p && !(res = ((block2data_f *)p->f)(t, ob)))
@@ -135,7 +137,6 @@ char *	mt_itoa(int_t i)
 
 	return	p;
 }
-
 
 
 

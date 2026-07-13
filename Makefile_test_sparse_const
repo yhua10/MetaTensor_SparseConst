@@ -6,9 +6,13 @@ DUMPS = \
 	dump_sparse.c \
 	dump_sparse_reverse.c \
 	dump_sparse_sum.c \
+	dump_sparse_zero.c \
+	dump_sparse_zero_sum.c \
 	dump_sparse_double.c \
 	dump_sparse_2d.c \
 	dump_sparse_2d_sum.c \
+	dump_sparse_broadcast.c \
+	dump_sparse_broadcast_sum.c \
 	dump_sparse_tuple.c \
 	dump_sparse_tuple_sum.c \
 	dump_sparse_ir.c \
@@ -22,9 +26,13 @@ DUMP_OBJS = \
 	dump_sparse.o \
 	dump_sparse_reverse.o \
 	dump_sparse_sum.o \
+	dump_sparse_zero.o \
+	dump_sparse_zero_sum.o \
 	dump_sparse_double.o \
 	dump_sparse_2d.o \
 	dump_sparse_2d_sum.o \
+	dump_sparse_broadcast.o \
+	dump_sparse_broadcast_sum.o \
 	dump_sparse_tuple.o \
 	dump_sparse_tuple_sum.o \
 	dump_sparse_ir.o \

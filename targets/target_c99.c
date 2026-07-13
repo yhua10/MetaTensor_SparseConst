@@ -138,6 +138,7 @@ target	target_c99_new()
 	_base->block2data_p = NULL;
 	target_register_block2data(_base, block2data_arithmetic);
 	target_register_block2data(_base, block2data_sparse_const);
+	target_register_block2data(_base, block2data_sparse_const_optimized);
 
 	_base->optimize_p = NULL;
 	target_register_optimize(_base, optimize_sparse_const);

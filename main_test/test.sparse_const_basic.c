@@ -39,6 +39,14 @@ static float K_tuple_values[] = {
 	0.5f, 1.0f, -0.75f,
 };
 
+static float K_broadcast_col[COLS] = {
+	0.0f, 2.0f, -1.0f, 0.0f,
+};
+
+static float K_zero[N] = {
+	0.0f,
+};
+
 static float K_ir[BIG];
 static float K_block[BLOCK];
 
@@ -314,10 +322,10 @@ static int dump_optimize_pass_case(void)
 		return 1;
 	}
 
-	sc = block2data_arithmetic(t, optimized);
+	sc = block2data(t, optimized);
 	if (!sc)
 	{
-		fprintf(stderr, "block2data_arithmetic failed after optimize_sparse_const\n");
+		fprintf(stderr, "block2data failed after optimize_sparse_const\n");
 		return 1;
 	}
 
@@ -355,6 +363,12 @@ int main(void)
 	if (dump_case("dump_sparse_sum.c", "compute_sparse_sum", "float",
 	              4, block_builtin_reduce_sum, 0, K_float))
 		return 1;
+	if (dump_case("dump_sparse_zero.c", "compute_sparse_zero", "float",
+	              4, block_builtin_reduce_prod, 0, K_zero))
+		return 1;
+	if (dump_case("dump_sparse_zero_sum.c", "compute_sparse_zero_sum", "float",
+	              4, block_builtin_reduce_sum, 0, K_zero))
+		return 1;
 	if (dump_case("dump_sparse_double.c", "compute_sparse_double", "double",
 	              8, block_builtin_reduce_prod, 0, K_double))
 		return 1;
@@ -365,6 +379,16 @@ int main(void)
 	if (dump_desc_case("dump_sparse_2d_sum.c", "compute_sparse_2d_sum", "float",
 	                   block_builtin_reduce_sum, 0,
 	                   make_direct_2d(K_2d), make_runtime_2d("input_x")))
+		return 1;
+	if (dump_desc_case("dump_sparse_broadcast.c", "compute_sparse_broadcast", "float",
+	                   block_builtin_reduce_prod, 0,
+	                   make_direct_real_len(K_broadcast_col, 4, COLS, "col"),
+	                   make_runtime_2d("input_x")))
+		return 1;
+	if (dump_desc_case("dump_sparse_broadcast_sum.c", "compute_sparse_broadcast_sum", "float",
+	                   block_builtin_reduce_sum, 0,
+	                   make_direct_real_len(K_broadcast_col, 4, COLS, "col"),
+	                   make_runtime_2d("input_x")))
 		return 1;
 	if (dump_desc_case("dump_sparse_tuple.c", "compute_sparse_tuple", "float",
 	                   block_builtin_reduce_prod, 0,
